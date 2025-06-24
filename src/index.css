@@ -1,0 +1,7 @@
+body {
+   background: #0f6ace;
+}
+* {
+   font-family: 'Noto Sans KR', sans-serif !important;
+   font-optical-sizing: auto !important;
+}
