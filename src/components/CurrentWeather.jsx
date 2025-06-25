@@ -1,7 +1,7 @@
 import './CurrentWeather.css'
 function CurrentWeather() {
    return (
-      <div className="card">
+      <div className="currentCard">
          <div>
             <h3>서울</h3>
             <p>few clouds</p>

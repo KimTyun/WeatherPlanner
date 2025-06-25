@@ -1,0 +1,22 @@
+.error-wrap {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.error-wrap h1 {
+   color: orangered;
+}
+
+.error-wrap p {
+   margin-bottom: 50px;
+   color: white;
+   font-size: 32px;
+   text-align: center;
+}
+
+.error-wrap button {
+   width: 30%;
+   text-align: center;
+}

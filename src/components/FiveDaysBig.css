@@ -1,0 +1,51 @@
+.fiveDaysBig {
+   width: 100%;
+   height: 320px;
+}
+
+.fiveDaysBig .swiper-slide {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   border-radius: 15px;
+   background-color: #003b81;
+   width: 100%;
+   height: 280px;
+   color: white;
+   font-size: 18px;
+   text-shadow:
+      -1px 0px #000b53,
+      0px 1px #000b53,
+      1px 0px #000b53,
+      0px -1px #000b53;
+}
+
+.fiveDaysBig .swiper-slide .day-wrap {
+   display: flex;
+   text-align: center;
+}
+.fiveDaysBig .swiper-slide .day-wrap > div {
+   position: relative;
+}
+.fiveDaysBig .swiper-slide .day-wrap > div > p:nth-of-type(1) {
+   position: absolute;
+   top: 20px;
+   left: 80px;
+   margin: 0;
+}
+.fiveDaysBig .swiper-slide .day-wrap > div > p:nth-of-type(2) {
+   position: absolute;
+   bottom: 20px;
+   left: 80px;
+   margin: 0;
+}
+
+.fiveDaysBig .swiper-slide .day-wrap img {
+   width: 200px;
+   height: 200px;
+}
+
+.fiveDaysBig .swiper-pagination-bullet {
+   background-color: white;
+}

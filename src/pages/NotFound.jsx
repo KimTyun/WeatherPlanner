@@ -1,7 +1,8 @@
+import Error from '../components/Error'
 function NotFound() {
    return (
       <>
-         <h1>NotFound</h1>
+         <Error error="NotFound"></Error>
       </>
    )
 }

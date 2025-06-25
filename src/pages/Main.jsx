@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import Banner from '../components/Banner'
 import SearchBar from '../components/SearchBar'
 import CurrentWeather from '../components/CurrentWeather'
 import FiveDaysWeathers from '../components/FiveDaysWeathers'
@@ -23,7 +22,6 @@ function Main() {
    return (
       <>
          <div className="wrap">
-            <Banner />
             <SearchBar></SearchBar>
             <CurrentWeather></CurrentWeather>
             <FiveDaysWeathers></FiveDaysWeathers>
