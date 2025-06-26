@@ -3,7 +3,7 @@ import 'swiper/css'
 import 'swiper/css/free-mode'
 import 'swiper/css/pagination'
 import { Pagination } from 'swiper/modules'
-import './FiveDaysBig.css'
+import './css/FiveDaysBig.css'
 
 function FiveDaysBig() {
    return (

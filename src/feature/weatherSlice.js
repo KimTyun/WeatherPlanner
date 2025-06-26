@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { get5DayWeatherForecast, getCurrentWeatherData } from '../api/opnWeatherApi'
+import { get5DayWeatherForecast, getCurrentWeatherData, getReverseGeocoding } from '../api/opnWeatherApi'
 
 export const currentWeather = createAsyncThunk('weather/currentWeather', async (cityName) => {
    const response = getCurrentWeatherData(cityName)
@@ -8,6 +8,11 @@ export const currentWeather = createAsyncThunk('weather/currentWeather', async (
 
 export const fiveDaysWeather = createAsyncThunk('weather/fiveDaysWeather', async (cityName) => {
    const response = get5DayWeatherForecast(cityName)
+   return response
+})
+
+export const reverseGeocoding = createAsyncThunk('', async ({ lat, lon }) => {
+   const response = getReverseGeocoding(lat, lon)
    return response
 })
 

@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBan } from '@fortawesome/free-solid-svg-icons'
-import './Error.css'
+import './css/Error.css'
 import Button from '@mui/material/Button'
 import { useNavigate } from 'react-router-dom'
 function Error({ error }) {

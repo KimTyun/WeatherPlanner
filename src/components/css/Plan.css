@@ -1,0 +1,134 @@
+.subTitle {
+   display: flex;
+   justify-content: space-between;
+   padding: 10px;
+   color: white;
+   font-size: 20px;
+   text-shadow:
+      -1px 0px #074cc8,
+      0px 1px #074cc8,
+      1px 0px #074cc8,
+      0px -1px #074cc8;
+}
+.bottom-btns {
+   display: flex;
+   justify-content: right;
+}
+.bottom-btns button {
+   margin: 10px;
+   background: #003b81;
+}
+.planner {
+   display: grid;
+   grid-template-columns: 80px 1fr;
+   gap: 10px;
+   border-radius: 10px;
+   background: #003b81;
+   padding: 10px;
+   color: white;
+}
+
+.planner .date-column {
+   display: flex;
+   grid-row: span 4;
+   flex-direction: column;
+   justify-content: center;
+   gap: 10px;
+   border-radius: 5px;
+   background: #0f1536;
+   color: white;
+   font-weight: bold;
+   text-align: center;
+}
+
+.planner .plan-row {
+   display: grid;
+   grid-template-columns: 100px 1fr auto auto;
+   align-items: center;
+   gap: 5px;
+   border-radius: 5px;
+   background: #ffffff22;
+   padding: 5px;
+}
+
+.planner .plan-row .weather-time {
+   font-size: 14px;
+   line-height: 1.2;
+   text-align: center;
+}
+
+.planner .plan {
+   color: white;
+}
+
+.planner input[type='text'] {
+   border-radius: 5px;
+   padding: 5px;
+   font-size: 14px;
+}
+
+button {
+   cursor: pointer;
+   border: none;
+   border-radius: 5px;
+   padding: 5px 10px;
+   height: 30px;
+   color: white !important;
+   font-weight: bold;
+}
+
+button.add,
+button.load {
+   background: #003b81;
+}
+
+button.edit {
+   background: green;
+}
+
+button.delete {
+   background: red;
+}
+
+@media (max-width: 600px) {
+   .planner {
+      grid-template-columns: 1fr; /* 한 줄로 바꿈 */
+      padding: 5px;
+   }
+
+   .date-column {
+      grid-row: auto;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 5px;
+      font-size: 14px;
+   }
+
+   .plan-row {
+      grid-template-columns: 1fr; /* 한 열로 정렬 */
+      gap: 4px;
+      padding: 10px;
+      text-align: left;
+   }
+
+   .weather-time {
+      margin-bottom: 2px;
+      font-weight: bold;
+      text-align: left;
+   }
+
+   .plan {
+      margin-bottom: 2px;
+      font-size: 14px;
+   }
+
+   input[type='text'] {
+      box-sizing: border-box;
+      width: 100%;
+   }
+
+   .edit,
+   .delete {
+      margin-top: 4px;
+   }
+}

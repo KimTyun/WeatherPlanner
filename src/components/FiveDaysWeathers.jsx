@@ -4,7 +4,7 @@ import 'swiper/css/free-mode'
 import 'swiper/css/pagination'
 import { FreeMode } from 'swiper/modules'
 
-import './FiveDaysWeathers.css'
+import './css/FiveDaysWeathers.css'
 
 function FiveDaysWeathers() {
    return (

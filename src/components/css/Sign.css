@@ -1,0 +1,32 @@
+.sign-wrap > form {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   margin: 0 auto;
+   width: 80%;
+   font-size: 24px;
+}
+
+.sign-wrap > form input {
+   margin-top: 5px;
+   margin-bottom: 20px;
+   border-radius: 5px;
+   height: 30px;
+}
+
+.sign-wrap > form label {
+   font-weight: bold;
+   font-size: 28px;
+}
+
+.sign-wrap > form a {
+   color: #003b81;
+   font-size: 18px;
+   text-align: right;
+}
+
+.sign-wrap > form button {
+   margin: 50px auto;
+   width: 50%;
+   text-align: center;
+}

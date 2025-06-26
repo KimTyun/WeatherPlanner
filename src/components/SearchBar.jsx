@@ -1,5 +1,5 @@
 import Button from '@mui/material/Button'
-import './SearchBar.css'
+import './css/SearchBar.css'
 function SearchBar() {
    return (
       <>

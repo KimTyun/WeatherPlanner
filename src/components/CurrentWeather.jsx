@@ -1,4 +1,4 @@
-import './CurrentWeather.css'
+import './css/CurrentWeather.css'
 function CurrentWeather() {
    return (
       <div className="currentCard">
