@@ -1,17 +1,17 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { get5DayWeatherForecast, getCurrentWeatherData, getReverseGeocoding } from '../api/opnWeatherApi'
 
-export const currentWeather = createAsyncThunk('weather/currentWeather', async (cityName) => {
+export const fecthcurrentWeather = createAsyncThunk('weather/currentWeather', async (cityName) => {
    const response = getCurrentWeatherData(cityName)
    return response
 })
 
-export const fiveDaysWeather = createAsyncThunk('weather/fiveDaysWeather', async (cityName) => {
+export const fecthfiveDaysWeather = createAsyncThunk('weather/fiveDaysWeather', async (cityName) => {
    const response = get5DayWeatherForecast(cityName)
    return response
 })
 
-export const reverseGeocoding = createAsyncThunk('', async ({ lat, lon }) => {
+export const fecthreverseGeocoding = createAsyncThunk('weather/reverseGeocoding', async ({ lat, lon }) => {
    const response = getReverseGeocoding(lat, lon)
    return response
 })
@@ -20,38 +20,50 @@ const weatherSlice = createSlice({
    name: 'weather',
    initialState: {
       plan: null,
-      data: {
-         currentWeather: {},
-         fiveDaysWeather: [],
-      },
+      cityName: null,
+      currentWeather: null,
+      fiveDaysWeather: null,
       loading: false,
       error: null,
    },
-   reducers: {},
+
    extraReducers: (build) => {
       build
-         .addCase(currentWeather.pending, (state) => {
+         .addCase(fecthcurrentWeather.pending, (state) => {
             state.loading = true
             state.error = null
          })
-         .addCase(currentWeather.fulfilled, (state, action) => {
+         .addCase(fecthcurrentWeather.fulfilled, (state, action) => {
             state.loading = false
-            state.data.currentWeather = action.payload
+            state.currentWeather = action.payload
          })
-         .addCase(currentWeather.rejected, (state, action) => {
+         .addCase(fecthcurrentWeather.rejected, (state, action) => {
             state.loading = false
             state.error = action.error
          })
 
-         .addCase(fiveDaysWeather.pending, (state) => {
+         .addCase(fecthfiveDaysWeather.pending, (state) => {
             state.loading = true
             state.error = null
          })
-         .addCase(fiveDaysWeather.fulfilled, (state, action) => {
+         .addCase(fecthfiveDaysWeather.fulfilled, (state, action) => {
             state.loading = false
-            state.data.fiveDaysWeather = action.payload
+            state.fiveDaysWeather = action.payload
          })
-         .addCase(fiveDaysWeather.rejected, (state, action) => {
+         .addCase(fecthfiveDaysWeather.rejected, (state, action) => {
+            state.loading = false
+            state.error = action.error
+         })
+
+         .addCase(fecthreverseGeocoding.pending, (state) => {
+            state.loading = true
+            state.error = null
+         })
+         .addCase(fecthreverseGeocoding.fulfilled, (state, action) => {
+            state.loading = false
+            state.cityName = action.payload[0]
+         })
+         .addCase(fecthreverseGeocoding.rejected, (state, action) => {
             state.loading = false
             state.error = action.error
             console.log(state.error)

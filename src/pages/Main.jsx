@@ -2,41 +2,46 @@ import { useEffect, useState } from 'react'
 import SearchBar from '../components/SearchBar'
 import CurrentWeather from '../components/CurrentWeather'
 import FiveDaysWeathers from '../components/FiveDaysWeathers'
-import { getReverseGeocoding } from '../api/opnWeatherApi'
+import { useDispatch } from 'react-redux'
+import { fecthreverseGeocoding } from '../feature/weatherSlice'
+import { Link } from 'react-router-dom'
 
 function Main() {
-   const [locate, setLocate] = useState({})
+   const dispatch = useDispatch()
+   const [locate, setLocate] = useState(null)
+
    useEffect(() => {
       if (navigator.geolocation) {
-         navigator.geolocation.getCurrentPosition(
-            (position) => {
-               const lat = position.coords.latitude
-               const lon = position.coords.longitude
-               setLocate({ lat, lon })
-            },
-            () => {
-               console.log('ㅗ')
-               setLocate({ lat: 37.5665, lon: 126.978 })
-            },
-         )
+         navigator.geolocation.getCurrentPosition((position) => {
+            const lat = position.coords.latitude
+            const lon = position.coords.longitude
+            setLocate({ lat, lon })
+         })
+      } else {
+         setLocate({ lat: 37.5665, lon: 126.978 })
       }
    }, [])
 
-   const onfuckyou = async () => {
-      if (locate?.lat && locate?.lon) {
-         const response = await getReverseGeocoding(locate.lat, locate.lon)
-         const data = await response.data
-         console.log(data[0].name)
+   useEffect(() => {
+      if (locate) {
+         dispatch(fecthreverseGeocoding({ lat: locate.lat, lon: locate.lon }))
       }
-   }
+   }, [locate, dispatch])
 
    return (
       <>
-         <button onClick={onfuckyou}></button>
          <div className="wrap">
             <SearchBar></SearchBar>
             <CurrentWeather></CurrentWeather>
             <FiveDaysWeathers></FiveDaysWeathers>
+            <div style={{ textAlign: 'right' }}>
+               <Link style={{ color: 'white', padding: '5px' }} to={'/signIn'}>
+                  로그인
+               </Link>
+               <Link style={{ color: 'white', padding: '5px' }} to={'/signUp'}>
+                  회원가입
+               </Link>
+            </div>
          </div>
       </>
    )

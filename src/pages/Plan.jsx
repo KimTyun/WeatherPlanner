@@ -1,5 +1,4 @@
 import Button from '@mui/material/Button'
-import '../components/css/Plan.css'
 import PlanGrid from '../components/PlanGrid'
 
 function Plan() {
@@ -10,10 +9,6 @@ function Plan() {
             <Button className="load">불러오기</Button>
          </div>
          <div className="planner">
-            <div className="date-column">
-               <div className="today-label">오늘</div>
-               <div className="date">6.24</div>
-            </div>
             <PlanGrid />
          </div>
          <div className="bottom-btns">

@@ -4,6 +4,10 @@ import './css/Plan.css'
 function PlanGrid() {
    return (
       <>
+         <div className="date-column">
+            <div className="today-label">오늘</div>
+            <div className="date">6.24</div>
+         </div>
          <div className="plan-row">
             <div className="weather-time">
                25℃ 맑음

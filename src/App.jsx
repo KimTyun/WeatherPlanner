@@ -14,7 +14,7 @@ function App() {
          </Banner>
          <Routes>
             <Route path="/" element={<Main />}></Route>
-            <Route path="/search/:cityName" element={<Search />}></Route>
+            <Route path="/search/" element={<Search />}></Route>
             <Route path="/plan/*" element={<Plan />}></Route>
             <Route path="/signIn" element={<Sign key={'In'} />}></Route>
             <Route path="/signUp" element={<Sign key={'Up'} />}></Route>

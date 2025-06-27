@@ -13,7 +13,7 @@ export async function getCurrentWeatherData(cityName) {
          units: 'metric',
       },
    })
-   console.log(response.data, '1단. get요청 리스펀스 데이터')
+
    return response.data
 }
 
@@ -25,7 +25,7 @@ export async function get5DayWeatherForecast(cityName) {
          units: 'metric',
       },
    })
-   console.log(response.data, '1단. get요청 리스펀스 데이터')
+
    return response.data
 }
 
@@ -37,7 +37,7 @@ export async function getReverseGeocoding(lat, lon) {
          appid: WEATHERKEY,
       },
    })
-   return response
+   return response.data
 }
 
 export default weatherApi
