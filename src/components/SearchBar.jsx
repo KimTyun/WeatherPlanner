@@ -2,10 +2,13 @@ import Button from '@mui/material/Button'
 import './css/SearchBar.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { setCityName } from '../feature/weatherSlice'
 
 function SearchBar() {
    const [value, setValue] = useState('')
    const navigate = useNavigate()
+   const dispatch = useDispatch()
 
    function onChange(e) {
       setValue(e.target.value)
@@ -17,6 +20,7 @@ function SearchBar() {
          alert('입력하세요')
          return
       }
+      dispatch(setCityName(value))
       navigate(`/search?query=${value.trim()}`)
    }
    return (

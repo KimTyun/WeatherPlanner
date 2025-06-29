@@ -6,6 +6,7 @@ const weatherApi = axios.create({
 })
 
 export async function getCurrentWeatherData(cityName) {
+   if (!cityName) return
    const response = await weatherApi.get('data/2.5/weather', {
       params: {
          q: cityName,
@@ -18,6 +19,7 @@ export async function getCurrentWeatherData(cityName) {
 }
 
 export async function get5DayWeatherForecast(cityName) {
+   if (!cityName) return
    const response = await weatherApi.get('data/2.5/forecast', {
       params: {
          q: cityName,

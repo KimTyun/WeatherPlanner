@@ -26,6 +26,11 @@ const weatherSlice = createSlice({
       loading: false,
       error: null,
    },
+   reducers: {
+      setCityName: (state, action) => {
+         state.cityName = action.payload
+      },
+   },
 
    extraReducers: (build) => {
       build
@@ -72,3 +77,5 @@ const weatherSlice = createSlice({
 })
 
 export default weatherSlice.reducer
+
+export const { setCityName } = weatherSlice.actions

@@ -28,7 +28,14 @@ function Error({ error }) {
    }
 
    if (error) {
-      return <>asdf</>
+      return (
+         <>
+            <p>{error?.message || '에러발생!'}</p>
+            <Button variant="contained" style={{ backgroundColor: '#003B81' }} onClick={onBackToMain}>
+               메인 페이지로 돌아가기
+            </Button>
+         </>
+      )
    }
 }
 

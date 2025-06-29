@@ -41,8 +41,11 @@ function Graph() {
       // 추출
       labels.forEach((label) => {
          const day = dayMap[label]
-         temperatureData.push(parseFloat(day.tempAtNoon))
-         rainData.push(Math.round(day.maxPop * 100)) // 0~1 → 0~100
+         const temp = day.tempAtNoon !== null ? parseFloat(day.tempAtNoon) : 0
+         const pop = Math.round(day.maxPop * 100)
+
+         temperatureData.push(temp)
+         rainData.push(pop)
       })
 
       // 그래프용 객체 생성

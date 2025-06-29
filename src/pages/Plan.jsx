@@ -1,20 +1,15 @@
 import Button from '@mui/material/Button'
 import PlanGrid from '../components/PlanGrid'
+import { useSelector } from 'react-redux'
 
 function Plan() {
+   const cityName = useSelector((s) => s.weather.cityName)
    return (
       <>
          <div className="subTitle">
-            <span>간이 계획서 작성하기</span>
-            <Button className="load">불러오기</Button>
+            <span>간이 계획서 작성하기 {cityName}</span>
          </div>
-         <div className="planner">
-            <PlanGrid />
-         </div>
-         <div className="bottom-btns">
-            <Button>일정 추가하기</Button>
-            <Button>저장하기</Button>
-         </div>
+         <PlanGrid />
       </>
    )
 }

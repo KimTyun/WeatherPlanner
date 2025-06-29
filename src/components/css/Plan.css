@@ -22,6 +22,7 @@
    display: grid;
    grid-template-columns: 80px 1fr;
    gap: 10px;
+   margin: 10px;
    border-radius: 10px;
    background: #003b81;
    padding: 10px;

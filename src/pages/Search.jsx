@@ -12,13 +12,14 @@ import Error from '../components/Error'
 function Search() {
    const dispatch = useDispatch()
    const navigate = useNavigate()
-   const { fiveDaysWeather, loading, error } = useSelector((s) => s.weather)
+   const { fiveDaysWeather, loading, error, cityName } = useSelector((s) => s.weather)
    const [searchParams] = useSearchParams()
    const query = searchParams.get('query')
 
    useEffect(() => {
-      dispatch(fecthfiveDaysWeather(query))
-   }, [dispatch, query])
+      if (!cityName) return
+      dispatch(fecthfiveDaysWeather(cityName))
+   }, [dispatch, query, cityName])
 
    if (loading) return <span>loading...</span>
 
@@ -31,7 +32,7 @@ function Search() {
       )
    }
    if (error) {
-      return <Error />
+      return <Error error={error} />
    }
    function onPlan() {
       navigate('/plan')

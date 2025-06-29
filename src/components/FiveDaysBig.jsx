@@ -49,8 +49,6 @@ function FiveDaysBig() {
 
       const List = Object.values(grouped).slice(0, 5)
 
-      console.log(List)
-      console.log(fiveDaysWeather)
       setweatherList(List)
    }, [fiveDaysWeather, setweatherList])
 
